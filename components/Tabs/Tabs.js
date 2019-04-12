@@ -7,7 +7,6 @@ class TabLink {
     this.tabData = tabElement.dataset.tab; 
     
     if(this.tabData == 'all'){
-      console.log('all');
       // If `all` is true, select all cards regardless of their data attribute values
       this.cards = document.querySelectorAll('.card');
     } else {
@@ -15,8 +14,6 @@ class TabLink {
       
       this.cards = document.querySelectorAll(`.card[data-tab="${this.tabData}"]`);
     }
-    
-
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
@@ -55,7 +52,6 @@ class TabCard {
     // Update the style of this.cardElement to display = "flex"
      this.cardElement.style.display = 'flex';
   }
-
 }
 
 /* START HERE: 
